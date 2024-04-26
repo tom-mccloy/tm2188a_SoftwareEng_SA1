@@ -32,6 +32,44 @@ Questions 1 - 2 | Question 3 - 4
 
 ### **3**: Project planning
 
+* **Project management methodology**: Agile
+* **What is agile?**: It is a project management approach that puts focus emphasis on collaboration, flexibility and development iteratively. It is now considered the industry-standard for the majority of software development (with the possible exception of large-scale engineering contracts - like military systems). 
+> * In a linear approach, the project progressed stage by stage. For example, the requirements are often robustly established and signed off before being able to proceed to the design section.
+>   * The rigidity of the linear model means that the project is less able to change during its lifecycle.
+* **Why agile is best here?**
+> * By developing iteratively, it allows for me to focus on a given feature and check that is works and consider feedback from colleagues.
+>* Furthermore, by focused on a given spring, it is widely thought to be more efficient as well. 
+
+#### **3.1**: Requirements
+
+* **Requirement**: A description of what software needs to do or be
+> * **Functional requirement**: A focus on _what_ the software needs to be do. For instance, apply a filter to an image.
+> * **Non-functional requirement**: A characteristic of the software, rather than what it needs to do.
+* To aid with the management of the requirements, I used the GitHub projects tool. **Why**?
+> * It is free to use. There exist many industry-standard tools, like Jira, that are pay-for-use.
+> * It is helpful to be able to have GitHub as the repository for the code, along with the project management elements.
+> * GitHub projects used **Kanban** (Figure 2). With the buckets for backlog, in-progress, reviewed and done, it is powerful to visualise how things are going with a project. Also, by having a backlog of requirements to achieve, it aligns with other Agile methodologies (like Scrum). 
+
+| ![image](https://github.com/tom-mccloy/tm2188a_SoftwareEng_SA1/assets/162805077/a646b5ce-786e-4aab-bf34-eee9667a30c7) 
+| :---: |
+| **Figure 2**: Kanban board from GitHub Project during the process of completing the application |
+
+#### **3.2**: Ticketing
+
+* Each requirement corresponds to:
+> * A feature.
+> * A branch in the GitHub deployment
+* Requirements are labelled with either:
+> * **documentation**: This refers to tasks that pertain to updated the `README.md`
+> * **UI design**: This are coding tasks relating to updating the HTNL / CSS files to create the user interface.
+> * **backend development**: This refers to the underlying JavaScript that is responsible for the underlying logic of the website.
+> * **testing**: All actions that check the application is working. Within the scope of this project, it will principally pertain to unit testing.
+> * **deployment**: The act of pushing the website out to a new environment. This is GitHub pages where the website should be visible.
+
+| ![image](https://github.com/tom-mccloy/tm2188a_SoftwareEng_SA1/assets/162805077/8e759127-381c-4255-b379-debcad9b2c75)
+| :----: |
+| **Figure 3**: Ticketing system in used - GitHub issues |
+
 
 ### **4**: Project planning
 

@@ -1,3 +1,8 @@
+/*
+Header of the website
+- h1          : The text of this webiste
+- blue-banner : The characteristic blue banner for gov website
+*/
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 36pt;
@@ -11,17 +16,17 @@ h1 {
     align-items: center; /* Centers text vertically within the header */
     justify-content: center; /* Optionally centers the content horizontally within the header (if there are other elements besides text) */
 }
-h2 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24pt;
-    color: black;
-    text-decoration: underline;
-}
 .blue-banner {
     width: 100%;
     height: 20px;
     background-color: #1d70b8;
 }
+/*
+Structure of the website
+-input-div   : The LHS of the website where the postcode is inputted
+- output-div : The RHS of the website where the geographical information is shown
+- container-input : Grid layout for keys / values / buttons to be added for both input / output
+*/
 .input-div, .output-div {
     width: 50%; /* Set width to 50% for each column */
     float: left; /* Make them float side-by-side */
@@ -37,6 +42,19 @@ h2 {
     grid-template-columns: repeat(2, 1fr); /* Defines 2 columns of equal width */
     grid-template-rows: repeat(8, 1fr); /* Defines 3 rows with automatic height */
     gap: 10px; /* Optional: adds spacing between grid items */
+}
+/*
+Text options 
+- h2  : Headers for the LHS / RHS of the website with input / output labels
+- key : Label that shows what is being shown / input required
+- input : Field for user to add input text
+- output : Label for information to be shown
+*/
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24pt;
+    color: black;
+    text-decoration: underline;
 }
 .key {
     grid-column: 1; /* Spans 1 column (optional, default for single elements) */
@@ -90,6 +108,10 @@ input {
 .output.ward {
     grid-row : 4;
 }
+
+/*
+Buttons used in the website
+*/
 button {
     background-color: #00703c; /* Default background color */
     font-family: Arial, Helvetica, sans-serif;

@@ -138,4 +138,6 @@ function viewOutput(apiOutput) {
     labelWard.innerText = apiOutput['admin_ward'];
     
 }
+// Exporting the postcode function for testing
+module.exports = possiblePostcode;
 

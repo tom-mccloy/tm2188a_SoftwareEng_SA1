@@ -70,10 +70,70 @@ Questions 1 - 2 | Question 3 - 4
 | :----: |
 | **Figure 3**: Ticketing system in used - GitHub issues |
 
+### **4**: Test-driven development
+* Testing is an incredibly important part of the software development life cycle (SDLC) and often takes more time than the inital coding of the product itself.
+* **Why is testing important?**
+> * By identifying bugs and errors you improve the experience of the product for your customer and ensure things work as they should.
+> * When performing testing, you may identify areas of weaker performance. This may be clunky functionality or slow performance. This can lead to improvements in this area.
+> * It is also important to test the security of the product as well.
+* **Test driven development**: In essence, this flips the process round of coding then testing. Tests are created ahead of time, and it encourages the developer to thing of edge cases where their code might fail. Therefore, by meeting these tests, the given functionality should perform as expected.
+* The steps to carry out test-driven development are:
+> * Write a failing test. This is often performed on a method with minimal implementation and is there as an initial smoke test.
+>  * The least code necessary to pass the test is then written.
+>  * Refactoring takes place to ensure that the code is easy to interpret and isn't too computationally intensive.
+>  * Repeat this process on the remainder of the tests, where the stringency or complexity of the test conditions increases. Thus, you produce a robust piece of code.
+* **Unit test**: Unit testing focuses on verifying the functionality of an individual unit of code. An example might be a single method. A unit test is often the starting point for test-driven development, as it allows you to focus on targeting a particular piece of functionality.
+> * A big benefit of unit testing is that you are identifying bugs in code early on. This is when they are easiest to fix.
 
-### **4**: Project planning
+#### **4.1**: `possiblePostcode`
+* The section of code tested as part of a unit test is a method called `possiblePostcode`
+* **Purpose**: To weed out postcodes that do not meet the standard of a UK postcode. It prevents an API call being sent for an input that is clearly not valid.
+* **Jest**: For all the tests, the popular JavaScript framework, Jest, was used. It allows for the testing of a method with minimal prior configuration.
 
-### **5**: Test-driven development
+##### **4.1.1**: Set up
+* **Installation**. It is assume that `Node.js` and its associated package manager `npm` is already installed. In the terminal, `jest` needs to be installed.
+
+```
+npm install --save-dev jest
+```
+* **Updating the config file**: If a `package.json` file is not already created, you should do. Within this file, the following section needs adding.
+
+```
+{
+  "scripts": {
+    "test": "jest"
+  }
+}
+```
+* **Exporting the method**: Under test here is the method `possiblePostcode` (contained within `index.js`. For use by Jest, this needs to be exported. To do so, the following line needs to be added at the end of the `index.js` file.
+
+```
+module.exports = possiblePostcode;
+```
+* **Importing the method**: Tests were created in a test file. This is denoted by the filename itself and here was named `index.test.js`. At the top, the previously exported method was imported.
+
+```
+const possiblePostcode = require(./index.js');
+```
+* This method should:
+> * Return `false` if there is no way that this is valid postcode.
+> * Return `true` if it does have the format of a valid postcode.
+* Therefore, I am going to use a method that checks the returned value. For a valid postcode, a test would be:
+
+```
+expect(possiblePostcode('CF10 3NB)).toBe(true);
+```
+* The ascending ladder of tests used for TDD were:
+> * A postcode should contain one or more characters that aren't white space or carriage return etc., th
+> * The first one or two characters of the outcode should be alphabetic.
+> * After the initial alphabetic characters of the outcode should be a number.
+> * The first letter of the inward code should be a number.
+> * The final two letters of a postcode should be two alphabetic characters.
+* By considering a set of postcodes for each requirement, the test was shown to have passed on the final iteration.
+
+| ![image](https://github.com/tom-mccloy/tm2188a_SoftwareEng_SA1/assets/162805077/fa2d380a-c5f2-46c6-ba98-4c9611a2b15c)
+| :----: |
+| **Figure 4**: Output in the terminal of Jest unit tests on `possiblePostcode` |
 
 ### **6**: Creation of the MVP
 

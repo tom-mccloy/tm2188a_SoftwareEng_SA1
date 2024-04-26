@@ -2,8 +2,11 @@
 
 ## _Due: 26th April 2024_
 
+* You can access the website [here](https://tom-mccloy.github.io/tm2188a_SoftwareEng_SA1/)
+* It originates from the GitHub [repository](https://github.com/tom-mccloy/tm2188a_SoftwareEng_SA1)
+
 ### **1**: The proposed project
-* **What?**: To create an easy to use postcode product that allows for key electoral and geographic information to be identified.
+* **What?**: To create an easy-to-use postcode product to allow for case managers to find out key information (such as constituency) for a given postcode. .
 * **Why?**: When handling large datasets in SQL, it is easy to extract postcode information by joining the table of interest with the postcode lookup. However, our case managers are often interested in looking up a single postcode (perhaps for a college or idependent training provider). For this, there currently is not tool widely adopted in the department. The tool aims to be a reliable and easy-to-use tool for case managers to get postcode / geographic information.
 
 ### **2**: The design
@@ -33,12 +36,12 @@ Questions 1 - 2 | Question 3 - 4
 ### **3**: Project planning
 
 * **Project management methodology**: Agile
-* **What is agile?**: It is a project management approach that puts focus emphasis on collaboration, flexibility and development iteratively. It is now considered the industry-standard for the majority of software development (with the possible exception of large-scale engineering contracts - like military systems). 
+* **What is agile?**: It is a project management approach that puts focus emphasis on collaboration, flexibility and developing iteratively. It is now considered the industry-standard for software development projects (with the possible exception of large-scale engineering contracts - like military systems). 
 > * In a linear approach, the project progressed stage by stage. For example, the requirements are often robustly established and signed off before being able to proceed to the design section.
->   * The rigidity of the linear model means that the project is less able to change during its lifecycle.
-* **Why agile is best here?**
+>   * The rigidity of the linear model means that the project is less able to change during its lifecycle. Therefore, it is less able to respond to change, whether that be changing customer requirements or increasing costs. 
+* **Why I chose agile?**
 > * By developing iteratively, it allows for me to focus on a given feature and check that is works and consider feedback from colleagues.
->* Furthermore, by focused on a given spring, it is widely thought to be more efficient as well. 
+>* Furthermore, by focused on a given spring, it is widely thought to be more efficient as well.
 
 #### **3.1**: Requirements
 
@@ -46,25 +49,28 @@ Questions 1 - 2 | Question 3 - 4
 > * **Functional requirement**: A focus on _what_ the software needs to be do. For instance, apply a filter to an image.
 > * **Non-functional requirement**: A characteristic of the software, rather than what it needs to do.
 * To aid with the management of the requirements, I used the GitHub projects tool. **Why**?
-> * It is free to use. There exist many industry-standard tools, like Jira, that are pay-for-use.
-> * It is helpful to be able to have GitHub as the repository for the code, along with the project management elements.
-> * GitHub projects used **Kanban** (Figure 2). With the buckets for backlog, in-progress, reviewed and done, it is powerful to visualise how things are going with a project. Also, by having a backlog of requirements to achieve, it aligns with other Agile methodologies (like Scrum). 
+> * It is free to use. There exist many industry-standard tools, like Jira, that are pay-for-use. 
+> * It is convenient to have the project management and the code repository in the same place. It allows for requirements to be marked as completed during a pull request. 
+> * GitHub projects used **Kanban** (Figure 2). With the buckets for the backlog, in-progress, reviewed and done, it is powerful to visualise how things are going with a project. Also, by having a backlog of requirements to achieve, it aligns with other Agile methodologies (like Scrum). 
 
 | ![image](https://github.com/tom-mccloy/tm2188a_SoftwareEng_SA1/assets/162805077/a646b5ce-786e-4aab-bf34-eee9667a30c7) 
 | :---: |
 | **Figure 2**: Kanban board from GitHub Project during the process of completing the application |
 
 #### **3.2**: Ticketing
+* Ticketing is commonly used in Software development and refers to the system of tracking and resolving issues, features and releases for software.
+* Thus, for this project, ticketing is managed by raising an issue in the aforementioned GitHub projects.
+* Therefore, each issue is a requirement for this project. In the version control, a branch is created for each issue before being merged after checking for conflicts.
+* **Sprint**: This is the key unit of work in agile software development. It is the short period of time whereby the project team focus on the development and delivery of a small set of work items.
+* One of the advantages of using the HTML, CSS and JavaScript stack (discussed later) is that page structure, design / layout and functionality can be developed quite separately.
+* With this in mind, the issues were categorised according to the sprint to which their pertained. 
+> * **1: Documentation**: Documenting the project in the `README.md`
+> * **2: UI design**: Coding tasks relating for updating the HTML / CSS files to create the user interface and its design.
+> * **3: Backend development**: Providing the underlying JavaScript that is responsible for the underlying logic of the website.
+> * **4: Testing**: All actions that check the application is working. Within the scope of this project, it will principally pertain to unit testing.
+> * **5: Deployment**: The act of pushing the website out to a new environment. This is GitHub pages where the website should be visible.
 
-* Each requirement corresponds to:
-> * A feature.
-> * A branch in the GitHub deployment
-* Requirements are labelled with either:
-> * **documentation**: This refers to tasks that pertain to updated the `README.md`
-> * **UI design**: This are coding tasks relating to updating the HTNL / CSS files to create the user interface.
-> * **backend development**: This refers to the underlying JavaScript that is responsible for the underlying logic of the website.
-> * **testing**: All actions that check the application is working. Within the scope of this project, it will principally pertain to unit testing.
-> * **deployment**: The act of pushing the website out to a new environment. This is GitHub pages where the website should be visible.
+**N.B**: It is possibly misleading to think about documentation as a sprint in its own right. It is probably more accurate to think of it as part of the sprint review that takes place at the end of each sprint. 
 
 | ![image](https://github.com/tom-mccloy/tm2188a_SoftwareEng_SA1/assets/162805077/8e759127-381c-4255-b379-debcad9b2c75)
 | :----: |
@@ -75,7 +81,7 @@ Questions 1 - 2 | Question 3 - 4
 
 #### **4.1**: The tech stack
 * **Tech stack**: A collection of technologies used to both build and run a software application. It is typically made up of programming languages, frameworks, APIs and databases.
-* Choosing a tech stack is an incredibly important early decision, as different stacks have relative benefits and suitability.
+* Choosing a tech stack is an incredibly important early decision, as different stacks have different benefits and suitability.
 * What I've chosen:
 > * **HTML**: A markup language that is the skeleton of a website. Different components are added to the web page through the use of tags. (i.e. `<h1>Text</h1>`)
 > * **CSS**: These style sheets allow for the separation of the appearence of the website from its structure. In the CSS file, you specify how things should appear including fonts and positioning.
@@ -161,10 +167,10 @@ document.getElementById("id-name")
 ### **5**: Test-driven development
 * Testing is an incredibly important part of the software development life cycle (SDLC) and often takes more time than the inital coding of the product itself.
 * **Why is testing important?**
-> * By identifying bugs and errors you improve the experience of the product for your customer and ensure things work as they should.
-> * When performing testing, you may identify areas of weaker performance. This may be clunky functionality or slow performance. This can lead to improvements in this area.
-> * It is also important to test the security of the product as well.
-* **Test driven development**: In essence, this flips the process round of coding then testing. Tests are created ahead of time, and it encourages the developer to thing of edge cases where their code might fail. Therefore, by meeting these tests, the given functionality should perform as expected.
+> * By identifying bugs and errors, you improve the experience of the product for your customer and ensure things work as they should.
+> * When performing testing, you may identify areas of weaker performance. This may be clunky functionality or slow performance. You can then develop improvements.
+> * It is also important to test the security of the product as well. Security vulnerabilities can cause information loss and be very costly.
+* **Test driven development**: In essence, this flips the typical process round of coding then testing. Tests are created ahead of time, and it encourages the developer to think of edge cases where their code might fail. Therefore, by meeting these tests, the given functionality should perform as expected.
 * The steps to carry out test-driven development are:
 > * Write a failing test. This is often performed on a method with minimal implementation and is there as an initial smoke test.
 >  * The least code necessary to pass the test is then written.
@@ -223,6 +229,30 @@ expect(possiblePostcode('CF10 3NB)).toBe(true);
 | :----: |
 | **Figure 4**: Output in the terminal of Jest unit tests on `possiblePostcode` |
 
-### **6**: Creation of the MVP
+### **6**: Accesibility testing
+* Google DeveloperTools provide a powerful array of functionality to inspect and assess websites.
+* Here, I have used **LightHouse** to look at the desktop accessibiltiy of this website (its intended use).
+* Figure 5 shows an overall accessibility score of 76 out of 100. The areas that are missing are:
+> * Adding a language tag to the HTML. This will be useful for screen readers to know the language for this website.
+> * The input text field does not have an alt text.
+* These are small modifications that can be quickly performed to improve the accessibility of this website.
+* However, it does show that this website is accessible in many ways:
+> * High colour contrast
+> * Not hidden elements
+> * Headings tags in a suitable order.
+
+| ![image](https://github.com/tom-mccloy/tm2188a_SoftwareEng_SA1/assets/162805077/fe41254a-1b62-449c-97d3-02da13a06fef)
+| :----: |
+| **Figure 5**: Accessibility report from Google LightHouse |
+
 
 ### **7**: Evaluation
+* A website has been produced that is able to utilise the `postcodes.io` API to retrieve postcode information for UK geographies. This will be value to case managers within the department that often need to retrieve this information for singular providers. Thus, it will remove the need to retrieve this information from various 3rd party websites. 
+* This website attempts to emulatre the GDS style guide that is utilised by all UK Government websites, and a majority of colleagues see the marked similarity. Thus, the end users should understand that this is an internally developed product and so is the preferred option over external information sources. However, there is still further tuning of both the HTML and CSS to produce a more accurate match. 
+* The use of unit tests have shown that the use of a regular expression is able to accurately distinguish between valid input and text that could not be a valid postcode.
+* As this website relies on an API for its information, there is a chance of being unable to retrieve this information. The use of exception handling should ensure that a suitable error message is shown to indicate the problem 
+* I have identified areas of future work that could be useful for the further development of this project:
+> * The use of more flexible layouts to allow for a responsive design that is suitable for mobile and desktop devices.
+> * The option of searching by multiple postcodes or potentially an outward code to offer more flexibility to the users.
+> * Creation of other pages on this site to retrieve other, related information and serve as an even more useful digital asset to colleagues.
+* Overall, as a MPV, this site has suceeded to show how a consistent tool for geographic information can be designed. 

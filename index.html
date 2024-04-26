@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = 'utf-8'>
+        <meta http-equiv = 'X-UA-Compatible' content = 'IE=edge'>
+        <title>Postcode Tool</title>
+        <link rel = 'stylesheet' href = './index.css'>
+    </head>
+    <body>
+        <h1><b>Department for Education</b>: Postcode Lookup Tool</b></h1>
+        <div class = 'blue-banner'></div>
+
+        <!--LHS: Input section of code-->
+        <div class = 'input-div'>
+            <h2>Input section</h2>
+            <div class = 'container-input'>
+
+                <!--Key and input for the postcode-->
+                <div class = 'key'>Input a postcode:</div>
+                <div class = 'field'><input type = 'text' id = 'txt-postcode'></div>
+
+                <!-- Warning message-->
+                <div class = 'key warning' id = 'lbl-warning'></div>
+
+                <!--Button to search by the postcode-->
+                <button id = 'btn-postcode' onclick = 'checkPostcode()'>Search postcode</button>
+            </div>
+        </div>
+
+        <!--RHS: Output of the postcode look-up-->
+        <div class = 'output-div'>
+            <h2>Output section</h2>
+            <div class = 'container-output'>
+                <!-- Country fields in form-->
+                <div class = 'key'>Country</div>
+                <div class = 'output country' id = 'lbl-country'>Hello</div>
+
+                <!-- Constituency fields in form-->
+                <div class = 'key constituency'>Constituency</div>
+                <div class = 'output constituency' id = 'lbl-constituency'>How</div>
+
+                <!--Council fields in form-->
+                <div class = 'key council'>Council</div>
+                <div class = 'output council' id = 'lbl-council'>Are</div>
+
+                <!-- Ward fields in the form-->
+                <div class = 'key ward'>Ward</div>
+                <div class = 'output ward' id = 'lbl-ward'>You</div>
+
+                <!--Clear button to empty the fields-->
+                <button class = 'button grey' id = 'clear-button' onclick = 'clearOutput()'>Clear fields</button>
+            </div>
+        </div>
+        
+        <!--C-->
+        <script src= './index.js' async defer></script>
+    </body>
+</html>

@@ -70,7 +70,95 @@ Questions 1 - 2 | Question 3 - 4
 | :----: |
 | **Figure 3**: Ticketing system in used - GitHub issues |
 
-### **4**: Test-driven development
+
+### **4**: The build of the MVP
+
+#### **4.1**: The tech stack
+* **Tech stack**: A collection of technologies used to both build and run a software application. It is typically made up of programming languages, frameworks, APIs and databases.
+* Choosing a tech stack is an incredibly important early decision, as different stacks have relative benefits and suitability.
+* What I've chosen:
+> * **HTML**: A markup language that is the skeleton of a website. Different components are added to the web page through the use of tags. (i.e. `<h1>Text</h1>`)
+> * **CSS**: These style sheets allow for the separation of the appearence of the website from its structure. In the CSS file, you specify how things should appear including fonts and positioning.
+> * **JavaScript**: It is the programming language of the modern internet. It is a light-weight programming language that adds the dynamic and interactive elements to this page.
+* **Why I've chosen this stack?**
+> * These three languages are the universal language of the website. Therefore, it will be easy to deploy this application.
+> * These technologies allow for the separation of structure, design and functionality. Therefore, it is easy to design your MVP in sections.
+
+#### **4.2**: Postcode.io
+* [Postcode.io](https://postcodes.io/) is an open-source API for UK geography.
+* Also, it is regularly updated and early has the new Westminster constituencies for the 2024 election in place. Therefore, by using this API, I am able to have my geographic information updated without needed to update some persistent datastore - like a database - myself.
+* **How to get postcode** information. The example GET command for this API is
+
+```
+https://api.postcodes.io/postcodes/CF243AA
+```
+
+* An example response from the API is shown below.
+
+```
+{
+    "status":200,
+    "result":{
+        "postcode":"CF24 3AA",
+        "quality":1,
+        "eastings":318879,
+        "northings":176831,
+        "country":"Wales",
+        "nhs_ha":"Cardiff and Vale University Health Board",
+        "longitude":-3.169657,
+        "latitude":51.484591,
+        "european_electoral_region":"Wales",
+        "primary_care_trust":"Cardiff and Vale University Health Board",
+        "region":null,"lsoa":"Cardiff 033F",
+        "msoa":"Cardiff 033",
+        "incode":"3AA",
+        "outcode":"CF24",
+        "parliamentary_constituency":"Cardiff Central",
+        "parliamentary_constituency_2024":"Cardiff East",
+        "admin_district":"Cardiff",
+        "parish":"Roath",
+        "admin_county":null,
+        "date_of_introduction":"199906",
+        "admin_ward":"Plasnewydd",
+        "ced":null,
+        "ccg":"Cardiff and Vale University",
+        "nuts":"Cardiff",
+        "pfa":"South Wales",
+        "codes":{
+            "admin_district":"W06000015",
+            "admin_county":"W99999999",
+            "admin_ward":"W05001289",
+            "parish":"W04000856"
+        }
+    }
+}
+```
+* The fields of most use to the departmental needs are:
+> * `country`: Nation of the UK
+> * `parliamentary_constituency': Seat for the Westminster Parliament
+> * 'admin_district': Council
+> * 'admin_ward': Council ward
+
+#### **4.3**: Creating the MVP
+* **Step 1**: The HTML
+> * Designing the structure of the website was the first step of this MVP
+> * For this website, it is principally basic HTML elements in use, like headings, buttons, inputs and text fields.
+**Step 2**: Design
+> * For organising the fields in the forms (where postcode is inputted and responses viewed), a grid layout manager was used as it organises elements in a rigid pattern.
+> * To have two separate boxes side by side, one for input and one for output, these were set to floating flexboxes. Whilst these have the right appearence, it may be necessary to look at other layout frameworks (such as React) to get the responsive nature of the website right later down the line.
+> * One major benefit of prototyping with Figma is that you're able to export the CSS code for use. This can then be directly added to `index.css`
+> * However, there are some elements where there are two instances but different styling - for example the buttons. To achieve this in CSS, I used multiple classes together (i.e. `.button .input`). The combination of these allowed for specialisation upon the basic button design.
+* **Step 3**: JavaScript
+> * Each item in the HTML is an object, hence the term document object model (DOM).
+> * In my JavaScript, it was necessary to uniquely address items. First, a customisation to the HTML was needed by adding `id = "id-name"` to the opening tags of the elements. Then, without the JavaScript code, their properties can be got and set with:
+
+```
+document.getElementById("id-name")
+```
+> * Retrieving data from the API is a commonly done thing in JavaScript and I used the following [tutorial](https://www.w3schools.com/jsref/api_fetch.asp) with minor modifications for this effect. 
+
+
+### **5**: Test-driven development
 * Testing is an incredibly important part of the software development life cycle (SDLC) and often takes more time than the inital coding of the product itself.
 * **Why is testing important?**
 > * By identifying bugs and errors you improve the experience of the product for your customer and ensure things work as they should.
@@ -85,12 +173,12 @@ Questions 1 - 2 | Question 3 - 4
 * **Unit test**: Unit testing focuses on verifying the functionality of an individual unit of code. An example might be a single method. A unit test is often the starting point for test-driven development, as it allows you to focus on targeting a particular piece of functionality.
 > * A big benefit of unit testing is that you are identifying bugs in code early on. This is when they are easiest to fix.
 
-#### **4.1**: `possiblePostcode`
+#### **5.1**: `possiblePostcode`
 * The section of code tested as part of a unit test is a method called `possiblePostcode`
 * **Purpose**: To weed out postcodes that do not meet the standard of a UK postcode. It prevents an API call being sent for an input that is clearly not valid.
 * **Jest**: For all the tests, the popular JavaScript framework, Jest, was used. It allows for the testing of a method with minimal prior configuration.
 
-##### **4.1.1**: Set up
+##### **5.1.1**: Set up
 * **Installation**. It is assume that `Node.js` and its associated package manager `npm` is already installed. In the terminal, `jest` needs to be installed.
 
 ```

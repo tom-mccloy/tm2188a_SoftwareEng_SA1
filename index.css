@@ -1,0 +1,125 @@
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36pt;
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-weight: normal;
+    width: 100%; /* Fills the entire width */
+    text-align: center; /* Centers text horizontally */
+    display: flex; /* Enables flexbox for vertical centering */
+    align-items: center; /* Centers text vertically within the header */
+    justify-content: center; /* Optionally centers the content horizontally within the header (if there are other elements besides text) */
+}
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24pt;
+    color: black;
+    text-decoration: underline;
+}
+.blue-banner {
+    width: 100%;
+    height: 20px;
+    background-color: #1d70b8;
+}
+.input-div, .output-div {
+    width: 50%; /* Set width to 50% for each column */
+    float: left; /* Make them float side-by-side */
+}
+.container-input {
+    display: grid; /* Enables grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Defines 2 columns of equal width */
+    grid-template-rows: repeat(8, 1fr); /* Defines 3 rows with automatic height */
+    gap: 10px; /* Optional: adds spacing between grid items */
+}
+.container-output {
+    display: grid; /* Enables grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Defines 2 columns of equal width */
+    grid-template-rows: repeat(8, 1fr); /* Defines 3 rows with automatic height */
+    gap: 10px; /* Optional: adds spacing between grid items */
+}
+.key {
+    grid-column: 1; /* Spans 1 column (optional, default for single elements) */
+    grid-row: 1; /* Places the label in the first row */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    color: black;
+}
+.key.warning {
+    grid-row : 2;
+    color : #d4351c;
+}
+.key.constituency {
+    grid-row : 2;
+}
+.key.council {
+    grid-row: 3;
+}
+.key.ward {
+    grid-row : 4;
+}
+.field {
+    grid-column: 2; /* Places the input field in the second column */
+    grid-row: 1; /* Places the input field in the first row */
+    width: 100%;
+}
+input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    font-style: italic;
+    width: 80%;
+    height: 100;
+}
+.output {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    font-weight: normal;
+    border : 1pt solid black;
+    grid-column: 2;
+    width : 80%;
+}
+.output.country {
+    grid-row : 1;
+}
+.output.constituency {
+    grid-row : 2;
+}
+.output.council {
+    grid-row : 3;
+}
+.output.ward {
+    grid-row : 4;
+}
+button {
+    background-color: #00703c; /* Default background color */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 18pt;
+    color: white; /* Default text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Add some padding */
+    cursor: pointer; /* Set cursor to pointer on hover */
+    /* Add transitions for smoother effects */
+    /*transition: background-color 0.2s ease, transform 0.1s ease;*/
+    grid-row : 6; 
+    grid-column : 2;
+    width: 40%;
+    margin-left: 42%;
+}
+button:hover {
+    border: 2px solid #ffdd00; /* Yellow border on hover */
+}
+button:active {
+    background-color: #ffdd00; /* Yellow fill when pressed */
+    color: black;
+}
+.button.grey {
+    background-color: #b1b4b6;
+    color: black;
+}
+
+
+
+
+
+  
